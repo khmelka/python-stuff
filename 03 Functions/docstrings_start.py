@@ -2,6 +2,11 @@
 
 
 def myFunction(arg1, arg2=None):
+    """myFUnction(arg1, arg2=None) --> prints stuff
+
+    Params: 
+    arg1, arg2
+    """
     print(arg1, arg2)
 
 
