@@ -7,19 +7,25 @@ class Person():
         self.lname = "Marini"
         self.age = 25
 
-    # use __repr__ to create a string useful for debugging
-    def __repr__(self):
-        return "<Person Class - fname:{0}, lname:{1}, age{2}>".format(self.fname, self.lname, self.age)
+    # TODO: use __repr__ to create a string useful for debugging
+    def _repr_(self):
+        return "<Person Class - fname:{0}, lname:{1}, age:{2}".format(
+            self.fname, self.lname, self.age
+        )
 
-    # use str for a more human-readable string
+    # TODO: use str for a more human-readable string
     def __str__(self):
-        return "Person ({0} {1} is {2})".format(self.fname, self.lname, self.age)
+        return "Person Class ({0} {1} is {2})".format(
+            self.fname, self.lname, self.age
+        )
 
-    # use bytes to convert the informal string to a bytes object
     def __bytes__(self):
-        val = "Person:{0}:{1}:{2}".format(self.fname, self.lname, self.age)
+        val = "Person:{0}:{1}:{2}".format(
+            self.fname, self.lname, self.age
+        )
         return bytes(val.encode('utf-8'))
 
+    
 
 def main():
     # create a new Person object
@@ -30,7 +36,6 @@ def main():
     print(str(cls1))
     print("Formatted: {0}".format(cls1))
     print(bytes(cls1))
-
 
 if __name__ == "__main__":
     main()
